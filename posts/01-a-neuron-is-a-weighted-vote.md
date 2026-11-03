@@ -1,6 +1,6 @@
 # A neuron is a weighted vote
 
-*Deep Learning from Scratch, part 1. Code: [`samples/01-neuron`](../samples/01-neuron).
+*Deep Learning from Scratch, part 1. Code: [`samples/01-neuron`](../samples/01-neuron).*
 
 In Cuba, the night before a Santiago de Cuba vs Industriales baseball game, everybody
 is an expert.

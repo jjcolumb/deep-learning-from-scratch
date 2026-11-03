@@ -1,6 +1,6 @@
 # One neuron can't draw Cuba
 
-*Deep Learning from Scratch, part 2. Code: [`samples/02-hidden-layer`](../samples/02-hidden-layer), in C# and Python, with the same numbers.*
+*Deep Learning from Scratch, part 2. Code: [`samples/02-hidden-layer`](../samples/02-hidden-layer).*
 
 Every Cuban kid can draw Cuba from memory. You learn it in school, the long
 island lying on its side, and you learn what it looks like: a caimán, an
