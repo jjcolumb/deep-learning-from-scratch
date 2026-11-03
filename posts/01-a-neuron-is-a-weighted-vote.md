@@ -2,6 +2,11 @@
 
 *Deep Learning from Scratch, part 1. Code: [`samples/01-neuron`](../samples/01-neuron).*
 
+> **In short:** a neuron multiplies each input by a weight, adds them up, and
+> turns the total into a probability. Training means nudging those weights,
+> step by step, until its guesses stop being wrong. We build one in C# and
+> Python that tells two penguin species apart 96% of the time.
+
 In Cuba, the night before a Santiago de Cuba vs Industriales baseball game, everybody
 is an expert.
 
@@ -84,6 +89,18 @@ p = 1 / (1 + e^-z)                    // turned into a probability
   between 0 and 1 that we can read as a probability. A very positive vote gives
   almost 1 ("surely a Chinstrap"), a very negative one gives almost 0, and a
   vote of exactly 0 gives 0.5, a shrug.
+
+Here's the trained neuron (we'll train it in a minute) deciding about the
+penguin from the beginning:
+
+![One penguin through the trained neuron](images/01-neuron-diagram.png)
+
+Each measurement is first put on a common scale (more on that below), then
+multiplied by its weight. A long bill adds +2.94 to the vote. A shallow bill
+adds +1.76, because the depth weight is negative and this bill is shallower
+than average, so the two negatives make a positive. The bias subtracts 1.97.
+The total vote is 2.73, and the sigmoid turns it into a probability of 0.94:
+Chinstrap.
 
 The places where the vote is exactly 0 form a line on the chart, the
 neuron's **decision boundary**. Penguins on one side are called Chinstraps,
@@ -225,8 +242,8 @@ and a deep bill votes a little for Adelie.** Seven of the 219 penguins sit on
 the wrong side of the line. No straight line can fix those, and that will be
 the whole point of part 2.
 
-And the penguin from the beginning, 46 mm by 17 mm? The neuron says
-**Chinstrap, with a probability of 0.94.**
+Those are the same weights you saw in the diagram, the ones that looked at
+the penguin from the beginning and said **Chinstrap, 0.94**.
 
 ## Three things I almost got wrong
 
@@ -268,8 +285,28 @@ in?". Compare weights only after the inputs are on the same scale.
 ## What one neuron can't do
 
 The corner method has a limit, and so does ours. However you set the
-weights, the boundary is always a straight line (with more measurements, a
-flat plane). Many real problems aren't split by a straight line. In part 2 we
+weights, the boundary is always a straight line. Here's why.
+
+The neuron's answer depends only on whether its vote `z` is positive or
+negative. The sigmoid turns `z` into a probability, but `p` is above 0.5
+exactly when `z` is above 0. So the boundary is wherever the vote is zero:
+
+```
+w1 * length + w2 * depth + b = 0
+```
+
+Rearrange it, and it's an old friend from school:
+
+```
+depth = -(w1 / w2) * length - b / w2       // y = mx + c
+```
+
+That's `y = mx + c`, the equation of a straight line, with a slope `m` of
+`-w1/w2` and a starting point `c` of `-b/w2`. Training can tilt the line and
+slide it around, but it can never bend it. (With more measurements, it becomes
+a flat plane, but it's still never curved.)
+
+Many real problems aren't split by a straight line. In part 2 we
 put a few neurons side by side, a **hidden layer**, and watch the line bend.
 
 The one thing to remember: **a neuron is a weighted vote, and learning is

@@ -2,6 +2,11 @@
 
 *Deep Learning from Scratch, part 2. Code: [`samples/02-hidden-layer`](../samples/02-hidden-layer).*
 
+> **In short:** one neuron can only split the world with a straight line. Put
+> a few neurons side by side (a *hidden layer*), bend their answers, and let
+> one more neuron combine them, and the network can draw almost any shape, even
+> the island of Cuba. Without the bend, extra layers add nothing.
+
 Every Cuban kid can draw Cuba from memory. You learn it in school, the long
 island lying on its side, and you learn what it looks like: a caimán, an
 alligator. Nicolás Guillén called it *"un largo lagarto verde"*, a long green

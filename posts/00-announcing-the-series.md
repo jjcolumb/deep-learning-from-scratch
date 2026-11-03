@@ -29,7 +29,33 @@ another language, is that same small idea stacked and wired together cleverly.
 You don't need a PhD to understand it. You need someone to walk you through it
 without skipping the parts that matter.
 
-That's what this series is for.
+## Why small models matter
+
+The headlines are about the giant frontier models, and they're impressive. But
+I believe a big part of the future belongs to **narrow intelligence**: small
+models trained to do one job well. Reading a specific kind of invoice,
+flagging a defective part on a production line, sorting support tickets, or
+recognizing a wake word.
+
+Small models have three advantages that matter to companies like the ones I
+build software for:
+
+- **They run on ordinary hardware.** A CPU in a server you already own, a
+  laptop, or a phone. No GPU cluster, no per-token bill.
+- **They're affordable.** You train them once, for a specific task, and
+  running them costs almost nothing.
+- **Your data stays home.** Not every company can, or should, send its
+  customers' records, contracts or medical data to a model in someone else's
+  cloud. A small model running in-house never has to.
+
+Growing up in Cuba teaches you to do a lot with very little, and that's the
+spirit of these models. Every model in this series runs on a laptop CPU. In the
+last post, a Transformer with about 45,000 numbers learns to translate dates as
+well as a recurrent network of the same size. That's tiny next to a frontier
+model, and it does its one job almost perfectly.
+
+To build, adapt and trust models like that, you have to understand what's
+inside them. That's what this series is for.
 
 ## Who it's for
 
