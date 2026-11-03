@@ -45,22 +45,6 @@ idea in code small enough to run on a laptop in a minute. Then I'll show you
 what went wrong when I tried it, because that's usually where the real lesson
 is.
 
-Three promises:
-
-- **C# first, then Python.** For everything we build from scratch (neurons,
-  networks, backpropagation, optimizers, convolutions, recurrent networks),
-  you'll see the C# version first and the Python version after. Both print the
-  same numbers, digit for digit, and an automated check makes sure they keep
-  doing so.
-- **Every number is measured.** If a post says 96.3%, there's code in the repo
-  that prints 96.3%. Nothing is copied from somewhere else, and nothing is
-  typed from memory.
-- **No magic boxes for C# developers.** When we move to a framework for the
-  bigger models, the code will be Python, because that's where the ecosystem
-  lives today. But each of those posts will have a "For C# developers"
-  section with the equivalent steps in [TorchSharp](https://github.com/dotnet/TorchSharp),
-  .NET's version of PyTorch.
-
 ## Where we're going
 
 We'll follow two threads all the way through. The first is **photos of
