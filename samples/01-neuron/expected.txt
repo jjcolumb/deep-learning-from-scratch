@@ -1,0 +1,11 @@
+step    0  loss 0.6931
+step  200  loss 0.1468
+step  400  loss 0.1054
+step  600  loss 0.0887
+step  800  loss 0.0794
+step 1000  loss 0.0733
+
+weights: bill length +4.417, bill depth -1.387, bias -1.968
+train accuracy 97.0%  (165 penguins)
+test  accuracy 96.3%  (54 penguins)
+always guessing Adelie: 68.5%
