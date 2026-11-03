@@ -8,12 +8,13 @@ measured. Start with the [announcement](posts/00-announcing-the-series.md).
 |---|---|---|
 | 0 | [Announcing the series](posts/00-announcing-the-series.md) | |
 | 1 | [A neuron is a weighted vote](posts/01-a-neuron-is-a-weighted-vote.md) | [`samples/01-neuron`](samples/01-neuron) (C#, Python) |
+| 2 | [One neuron can't draw Cuba](posts/02-one-hidden-layer.md) | [`samples/02-hidden-layer`](samples/02-hidden-layer) (C#, Python) |
 
 ## Running the samples
 
 ```bash
 # C# (.NET 10)
-cd samples/01-neuron/csharp && dotnet run
+cd samples/01-neuron/csharp && dotnet run -c Release
 
 # Python 3.10+
 pip install -r requirements.txt

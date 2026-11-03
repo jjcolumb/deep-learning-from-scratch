@@ -59,7 +59,7 @@ Here's the map. It'll grow and change as we go.
 
 **Part 1: How a network learns**
 1. A neuron is a weighted vote *(published)*
-2. One hidden layer: when a straight line isn't enough
+2. One neuron can't draw Cuba: hidden layers *(published)*
 3. Backpropagation by hand, checking it, then letting the framework do it
 
 **Part 2: Making training work**

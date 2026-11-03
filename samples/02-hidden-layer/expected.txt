@@ -1,0 +1,13 @@
+1500 training points, 500 test points, 51.6% of the test points are land
+
+model                          train    test
+one neuron                     59.8%   55.6%
+10 hidden, no bend             59.8%   55.6%
+1 hidden, tanh                 68.7%   67.8%
+2 hidden, tanh                 87.9%   85.8%
+3 hidden, tanh                 89.3%   88.6%
+4 hidden, tanh                 92.3%   92.2%
+6 hidden, tanh                 94.5%   94.0%
+10 hidden, tanh                95.8%   95.0%
+20 hidden, tanh                97.7%   96.4%
+50 hidden, tanh                98.8%   98.0%
