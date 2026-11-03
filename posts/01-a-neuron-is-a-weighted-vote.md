@@ -1,8 +1,8 @@
 # A neuron is a weighted vote
 
-*Deep Learning from Scratch, part 1. Code: [`samples/01-neuron`](../samples/01-neuron), in C# and Python, with the same numbers.*
+*Deep Learning from Scratch, part 1. Code: [`samples/01-neuron`](../samples/01-neuron).
 
-In Cuba, the night before a Santiago de Cuba vs Industriales game, everybody
+In Cuba, the night before a Santiago de Cuba vs Industriales baseball game, everybody
 is an expert.
 
 I grew up in Moa, in Holguín, and moved to Havana before high school. If you
@@ -35,9 +35,12 @@ billions of them.
 
 You can't understand the billions until you've built one by hand. So let's
 build one, in C# and in Python, and teach it to tell two kinds of penguins
-apart. (There are no penguins in Cuba. The coldest thing we have is a January
-morning at 18 °C, when everyone puts on a jacket. I chose penguins anyway,
-because the data is lovely.)
+apart.
+
+There are no penguins in Cuba. The coldest thing we have is a January morning
+at 18 °C, when everyone puts on a jacket. Growing up, penguins were like most
+things from the outside world: something you could only dream about. I chose
+them anyway, because the data is lovely.
 
 ## The data
 
@@ -45,6 +48,14 @@ The [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/) dataset
 measures 344 penguins from three islands in Antarctica. I kept the two species
 that are hardest to tell apart, Adelie (151 birds) and Chinstrap (68), and two
 measurements of each: **bill length** and **bill depth**.
+
+![The three Palmer penguin species: Chinstrap, Gentoo and Adelie](images/lter_penguins.png)
+
+*We'll use the Chinstrap (left) and the Adelie (right). Artwork by @allison_horst.*
+
+![How bill length and bill depth are measured](images/culmen_depth.png)
+
+*Bill length runs along the top of the beak; bill depth is its height. Artwork by @allison_horst.*
 
 Here's a penguin with a bill 46 mm long and 17 mm deep. Adelie or Chinstrap?
 Hold that thought.
@@ -274,4 +285,4 @@ cd csharp && dotnet run          # .NET 10
 cd ../python && python main.py   # numpy
 ```
 
-*Data: Palmer Penguins, Horst, Hill & Gorman (2020), CC0.*
+*Data: Palmer Penguins, Horst, Hill & Gorman (2020), CC0. Penguin artwork by @allison_horst.*

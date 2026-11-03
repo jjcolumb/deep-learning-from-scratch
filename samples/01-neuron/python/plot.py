@@ -19,7 +19,7 @@ OUT = Path(__file__).resolve().parents[3] / "posts" / "images" / "01-neuron.png"
 
 INK, MUTED, GRID = "#0b0b0b", "#52514e", "#e4e3df"
 fig, ax = plt.subplots(figsize=(7, 4.6))
-for label, name, color, marker in ((0, "Adelie", "#2a78d6", "o"), (1, "Chinstrap", "#eb6834", "^")):
+for label, name, color, marker in ((0, "Adelie", "#eb6834", "o"), (1, "Chinstrap", "#6250d6", "^")):
     pts = X[y == label]
     ax.scatter(pts[:, 0], pts[:, 1], s=36, c=color, marker=marker, edgecolors="white", linewidths=1, label=name, zorder=3)
 

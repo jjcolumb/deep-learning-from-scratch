@@ -3,3 +3,4 @@ obj/
 __pycache__/
 .venv/
 .DS_Store
+posts/images/PROMPTS.md
