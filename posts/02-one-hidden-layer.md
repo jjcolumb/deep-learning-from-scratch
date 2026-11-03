@@ -122,6 +122,30 @@ z2 = W2 · a1 + b2       // the output neuron votes on their votes
 p  = sigmoid(z2)        // probability of land
 ```
 
+Here's a real trained network with 3 hidden neurons (the one we'll open up
+later in this post) deciding about one point: **Moa**.
+
+![Moa through the 3-neuron network](images/02-network-diagram.png)
+
+Follow the numbers from left to right:
+
+- **Hidden 1** happens to have its line running right through Moa, so its
+  vote is exactly 0 and the bend keeps it at 0. *"No opinion."* It
+  contributes nothing.
+- **Hidden 2** votes a mild yes (+0.76, bent to +0.64). The output trusts
+  this neuron a lot (weight +9.61), so it adds +6.15.
+- **Hidden 3** is confident: its vote of -3.59 is bent all the way to -1.00,
+  a firm *"no"*. But the output's weight for it is negative (-4.67), so a firm
+  "no" from this neuron counts as **+4.67 for land**. A hidden neuron's
+  "yes" and "no" don't mean land or sea by themselves. They mean whatever the
+  output learns to read into them.
+- **The output's bias is -9.73.** It starts out very skeptical, and it only
+  says "land" when several hidden neurons agree.
+
+Total: 0 + 6.15 + 4.67 - 9.73 = **1.09**, and the sigmoid turns that into
+**0.75: land**. Correct, Moa is very much on land. Notice that no single
+hidden neuron said "land". The answer came from combining them.
+
 ## How it learns: blame flows backwards
 
 Training works exactly as in part 1: measure the log loss, find the slope for
