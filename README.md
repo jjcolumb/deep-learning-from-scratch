@@ -9,6 +9,7 @@ measured. Start with the [announcement](posts/00-announcing-the-series.md).
 | 0 | [Announcing the series](posts/00-announcing-the-series.md) | |
 | 1 | [A neuron is a weighted vote](posts/01-a-neuron-is-a-weighted-vote.md) | [`samples/01-neuron`](samples/01-neuron) (C#, Python) |
 | 2 | [One neuron can't draw Cuba](posts/02-one-hidden-layer.md) | [`samples/02-hidden-layer`](samples/02-hidden-layer) (C#, Python) |
+| 3 | [Blame flows backwards](posts/03-backprop.md) | [`samples/03-backprop`](samples/03-backprop) (C#, Python; PyTorch) |
 
 ## Running the samples
 

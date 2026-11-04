@@ -1,0 +1,28 @@
+10000 training photos, 2000 test photos, half of each are frogs
+
+model                                train    test
+one neuron                           75.9%   75.8%
+1 hidden layer (20)                  78.4%   78.8%
+3 hidden layers (20, 7, 5)           82.3%   80.8%
+3 hidden layers, backprop bug        76.5%   77.6%
+
+gradient check, correct backprop (313 weights, 16 photos): difference 5.2e-09
+  layer 1: 1.1e-08
+  layer 2: 5.4e-09
+  layer 3: 3.3e-09
+  layer 4: 2.3e-09
+
+gradient check, backprop bug (313 weights, 16 photos): difference 3.9e-01
+  layer 1: 6.0e-01   <- wrong
+  layer 2: 3.9e-01   <- wrong
+  layer 3: 1.8e-01   <- wrong
+  layer 4: 2.3e-09
+
+size of the nudge vs. difference (correct backprop)
+  1e-01: 4.7e-02
+  1e-03: 1.6e-03
+  1e-05: 4.6e-11
+  1e-07: 5.2e-09
+  1e-09: 4.8e-07
+  1e-11: 4.5e-05
+  1e-13: 5.0e-03

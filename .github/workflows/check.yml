@@ -12,4 +12,9 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
+      - uses: actions/cache@v4
+        with:
+          path: data/cifar-10-binary.tar.gz
+          key: cifar-10-binary
+      - run: python data/make_frogs.py
       - run: ./check.sh

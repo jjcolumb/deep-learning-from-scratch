@@ -4,3 +4,5 @@ __pycache__/
 .venv/
 .DS_Store
 posts/images/PROMPTS.md
+cifar-10-binary.tar.gz
+frogs_*.bin
