@@ -17,7 +17,7 @@ when you picked it up. Same booklet, same portions, for everyone.
 The idea was equality from the start. More than sixty years later, the
 libreta still exists, and a lot of Cubans would tell you what it actually
 taught them: when everybody gets exactly the same, nobody has a reason or a way
-to do anything different. Equal at the start, equal forever.
+to do anything different. Equal at the start, equal forever. Nobody cares.
 
 Neural networks learned the same lesson, and you can measure it.
 
