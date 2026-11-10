@@ -96,7 +96,10 @@ class Network:
 
     def cost(self, X, y):
         p = self.forward(X)[-1][:, 0]
-        return -total(y * np.log(p) + (1 - y) * np.log(1 - p)) / len(y)
+        # math.log is the system's log, the same one .NET calls; on Linux numpy
+        # has its own, which differs in the last digit now and then
+        log = np.vectorize(math.log)
+        return -total(y * log(p) + (1 - y) * log(1 - p)) / len(y)
 
     def backward(self, A, y, bug=False):
         """The gradient of the cost for every weight, last layer first."""
