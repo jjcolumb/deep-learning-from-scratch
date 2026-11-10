@@ -1,0 +1,16 @@
+10000 training photos, 2000 test photos, half of each are frogs
+
+3 hidden layers (20, 7, 5)
+starting weights           train    test   signal at the start, layer by layer
+all zeros                  50.0%   50.0%   0e+00 0e+00 0e+00
+all equal (0.01)           61.0%   62.3%   3e+00 6e-01 4e-02
+random, tiny (0.01)        50.0%   50.0%   5e-02 7e-04 1e-05
+random, big (1)            63.2%   63.5%   5e+00 7e+00 1e+01
+random, 1/sqrt(n)          73.2%   74.6%   1e-01 3e-02 2e-02
+random, sqrt(6/n)          82.3%   80.8%   2e-01 2e-01 2e-01
+
+10 hidden layers of 20
+starting weights           train    test   signal at the start, layer by layer
+random, tiny (0.01)        50.0%   50.0%   5e-02 1e-03 1e-05 2e-07 2e-09 4e-11 7e-13 1e-14 2e-16 5e-18
+random, 1/sqrt(n)          50.0%   50.0%   1e-01 4e-02 1e-02 3e-03 1e-03 4e-04 2e-04 6e-05 3e-05 1e-05
+random, sqrt(6/n)          89.7%   79.6%   2e-01 2e-01 2e-01 1e-01 9e-02 9e-02 9e-02 7e-02 8e-02 9e-02
