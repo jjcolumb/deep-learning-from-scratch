@@ -43,6 +43,13 @@ X_train = X_train - mean
 X_test = X_test - mean
 
 
+# math.exp and math.log are the system's own, the same ones .NET calls. On Linux
+# numpy brings its own versions, which differ in the last digit now and then:
+# harmless for training, but the gradient check below is sensitive enough to see it.
+exp = np.vectorize(math.exp)
+log = np.vectorize(math.log)
+
+
 class Random:
     """A tiny random generator (SplitMix64), written by hand so the C# version
     makes exactly the same choices."""
@@ -91,14 +98,11 @@ class Network:
         for l in range(len(self.W)):
             Z = dot(A[-1], self.W[l], self.b[l])
             last = l == len(self.W) - 1
-            A.append(1 / (1 + np.exp(-Z)) if last else np.where(Z > 0, Z, 0.0))   # sigmoid or ReLU
+            A.append(1 / (1 + exp(-Z)) if last else np.where(Z > 0, Z, 0.0))   # sigmoid or ReLU
         return A
 
     def cost(self, X, y):
         p = self.forward(X)[-1][:, 0]
-        # math.log is the system's log, the same one .NET calls; on Linux numpy
-        # has its own, which differs in the last digit now and then
-        log = np.vectorize(math.log)
         return -total(y * log(p) + (1 - y) * log(1 - p)) / len(y)
 
     def backward(self, A, y, bug=False):
